@@ -1,0 +1,36 @@
+{"tshirts":[{
+    "id": 1,
+    "model": "rebel",
+    "colour": "darkgrey",
+    "size": [{"S": 20},
+    {"M": 15},
+    {"L": 10},
+    {"XL": 5}],
+    "price": "9.99",
+    "maker": "indiecorp",
+    "urlpic": "https://master-repo-jg-jguijarro.c9users.io/Publico/PrimerProyecto/no_leas_la_siguiente_frase.jpg"
+},
+{
+    "id": 2,
+    "model": "politicallyincorrect",
+    "colour": "darkgrey",
+    "size": [{"S": 20},
+    {"M": 15},
+    {"L": 10},
+    {"XL": 5}],
+    "price": "9.99",
+    "maker": "indiecorp",
+    "urlpic": "https://master-repo-jg-jguijarro.c9users.io/Publico/PrimerProyecto/politicamente_incorrecto.jpg"
+},
+{
+      "id": 3,
+    "model": "revolution",
+    "colour": "lightgrey",
+    "size": [{"S": 20},
+    {"M": 15},
+    {"L": 10},
+    {"XL": 5}],
+    "price": "9.99",
+    "maker": "indiecorp",
+    "urlpic": "https://master-repo-jg-jguijarro.c9users.io/Publico/PrimerProyecto/revolution.jpg"
+}]}
