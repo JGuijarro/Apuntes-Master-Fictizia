@@ -23,7 +23,7 @@ function getDataTshirts(){
 
 
 function catchDataTshirtById(idTshirt){
-    dataTshirts.tshirts.forEach(item){
+    dataTshirts.tshirts.forEach(function(item){
     if (idTshirt === item.id){
         model = item.model;
         colour = item.colour;
@@ -32,7 +32,7 @@ function catchDataTshirtById(idTshirt){
         maker = item.maker;
         urlpic = item.urlpic;
         }
-    }
+    })
 }
 
 function drawDataTshirt(idTshirt){
