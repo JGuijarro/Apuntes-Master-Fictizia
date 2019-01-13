@@ -59,6 +59,6 @@ function delay(milliseconds){
 
 // main program
 
-clickItems.addEventListener("click", drawDataTshirt());
+clickItems.addEventListener("click", drawDataTshirt(1));
 delay(3000);
 location.href= "camiseta.html";
