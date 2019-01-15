@@ -1,5 +1,5 @@
 {"tshirts":[{
-    "id": 1,
+    "id": "camiseta1",
     "model": "rebel",
     "colour": "darkgrey",
     "size": [{"S": 20},
@@ -11,7 +11,7 @@
     "urlpic": "https://master-repo-jg-jguijarro.c9users.io/Publico/PrimerProyecto/no_leas_la_siguiente_frase.jpg"
 },
 {
-    "id": 2,
+    "id": "camiseta2",
     "model": "politicallyincorrect",
     "colour": "darkgrey",
     "size": [{"S": 20},
@@ -23,7 +23,7 @@
     "urlpic": "https://master-repo-jg-jguijarro.c9users.io/Publico/PrimerProyecto/politicamente_incorrecto.jpg"
 },
 {
-      "id": 3,
+      "id": "camiseta3",
     "model": "revolution",
     "colour": "lightgrey",
     "size": [{"S": 20},

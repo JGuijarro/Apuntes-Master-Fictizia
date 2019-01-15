@@ -6,20 +6,26 @@ var price;
 var maker;
 var urlpic;
 var clickItems = document.getElementById("aqui");
-var req;
 var item;
 
-function getDataTshirts(){
-    req = new XMLHttpRequest();
-    req.onreadystatechange = function(){
-        if (req.readyState === 4 && req.status === 200){
-            dataTshirts = JSON.parse(req.responseText);
-        } else if (req.readyState === 4 && req.status === 404){
-            console.log(req.responseText);
+
+function getDataTshirtsAjax(url) {
+    var req = new XMLHttpRequest();
+
+    req.onreadystatechange = function() {
+
+        if (req.readyState === 4 && req.status === 200) {
+            console.info(JSON.parse(req.responseText));
+        } else if (req.readyState === 4 && req.status === 404) {
+            console.error("ERROR! 404");
+            console.info(JSON.parse(req.responseText));
         }
-        return dataTshirts;
-    }
+    };
+    req.open("GET", url, true);
+    req.send();
 }
+
+getDataTshirtsAjax("/Publico/PrimerProyecto/datatshirt.json");
 
 
 function catchDataTshirtById(idTshirt){
@@ -37,7 +43,7 @@ function catchDataTshirtById(idTshirt){
 
 function drawDataTshirt(idTshirt){
   //0: llamada Ajax
-  getDataTshirts();
+  getDataTshirtsAjax("/Publico/PrimerProyecto/datatshirt.json");
   //1: capturar informacion de la camiseta
   catchDataTshirtById(idTshirt);
   //2: generar dinamicamente el html con la info de la camiseta capturada
@@ -59,6 +65,10 @@ function delay(milliseconds){
 
 // main program
 
-clickItems.addEventListener("click", drawDataTshirt(1));
-delay(3000);
-location.href= "camiseta.html";
+clickItems.addEventListener("click", function(){
+    //drawDataTshirt(1)
+    location.href= "camiseta.html";
+
+    
+});
+//delay(3000);

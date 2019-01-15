@@ -7,11 +7,11 @@
     <h1>Camiseta</h1>
     <h2 id="model"></h2>
     <ul>
-      <li id="colour"></li>
-      <li id="size"></li>
-      <li id="price"></li>
-      <li id="maker"></li>
-      <li id="urlpic"></li>
+      Color<li id="colour"></li><br>
+      Talla<li id="size"></li><br>
+      Precio<li id="price"></li><br>
+      Fabricante<li id="maker"></li><br>
+      Imagen<li id="urlpic"></li><br>
       </ul>
 
 <div>
@@ -26,7 +26,46 @@
   <label><input type="checkbox" name="delivertype"> Comprar como regalo</label>
 </div>
 
-<script src="code.js">
+<footer>
+  
+</footer>
+
+<script>
+
+function getDataTshirtsAjax(url,cb) {
+    var req = new XMLHttpRequest();
+
+    req.onreadystatechange = function() {
+
+        if (req.readyState === 4 && req.status === 200) {
+            var info = JSON.parse(req.responseText);
+            console.info(info);
+            cb(info.tshirts[0])
+        } else if (req.readyState === 4 && req.status === 404) {
+            console.error("ERROR! 404");
+            console.info(JSON.parse(req.responseText));
+        }
+    };
+    req.open("GET", url, true);
+    req.send();
+}
+
+function drawDataTshirt(data){
+  //0: llamada Ajax
+  //1: capturar informacion de la camiseta
+  //2: generar dinamicamente el html con la info de la camiseta capturada
+    document.getElementById("model").innerHTML=data.model;
+    document.getElementById("colour").innerHTML=data.colour;
+    //document.getElementById("size").innerHTML=data.size;
+    document.getElementById("price").innerHTML=data.price+"€";
+    document.getElementById("maker").innerHTML=data.maker;
+    document.getElementById("urlpic").innerHTML=`<img src="${data.urlpic}" height="400" width="300">`;
+}
+
+getDataTshirtsAjax("/Publico/PrimerProyecto/datatshirt.json", function(data){
+  drawDataTshirt(data)
+});
+
 </script>
 </body>
 </html>
